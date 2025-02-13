@@ -31,8 +31,9 @@
 
 
 /*Importing Google Fonts */
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,300|Playfair+Display:700italic,400italic|Crimson+Text:400italic,600italic|Open+Sans:400,700);
-
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,300|Playfair+Display:700italic,400italic|Crimson+Text:400italic,600italic|Open+Sans:400,700);
+*/
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Nova+Flat&family=Odibee+Sans&family=Roboto+Flex:opsz@8..144&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap');
 /*=======================================================================
 	General CSS
 =======================================================================*/
@@ -40,7 +41,22 @@
 	margin:0;
 	padding:0;
 	outline:none;
-	font-family: Open Sans, sans-serif;
+	font-family: "Roboto Flex", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		"slnt" 0,
+		"wdth" 100,
+		"GRAD" 0,
+		"XOPQ" 96,
+		"XTRA" 468,
+		"YOPQ" 79,
+		"YTAS" 750,
+		"YTDE" -203,
+		"YTFI" 738,
+		"YTLC" 514,
+		"YTUC" 712;
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
@@ -154,11 +170,13 @@ body.section-show .close-btn{
 }
 .section-header h2{
 	font-size:32px;
-	letter-spacing:6px;
-	color:#333;
+	letter-spacing:1px;
+	color:#f9f9f9;
 	margin-top:0;
 	margin-bottom:35px;
-	font-weight:300;
+	font-family: "UnifrakturMaguntia", serif;
+	font-weight: 400;
+	font-style: normal;
 }
 .section-header p{
 	margin-top:30px;
@@ -170,7 +188,10 @@ body.section-show .close-btn{
 	overflow-x:hidden;
 }
 .front-section{
-	background:#FFF;
+	background-image: url('../img/y2kbg.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat:no-repeat;
 }
 .section{
 	position:fixed;
@@ -376,7 +397,8 @@ body.section-show .transition-mask:before{
 	-webkit-animation: fill .4s both ease;
 	-moz-animation: fill .4s both ease;
 	animation: fill .4s both ease;
-	background:#CCC;
+	background-image: url(../img/transition.png);
+	background-size: cover;
 }
 
 @-webkit-keyframes fill2{
@@ -446,9 +468,8 @@ body.section-show .transition-mask:before{
 	margin-top:190px;
 }
 .front-heading > h2{
-	font-size:55px;
-	font-weight:lighter;
-	letter-spacing:15px;
+	font-size:50px;
+	letter-spacing:0px;
 	position:relative;
 	position:relative;
 	line-height:1em;
@@ -456,16 +477,21 @@ body.section-show .transition-mask:before{
 	*display:inline;
 	*zoom:1;
 	z-index:10;
-	color:#999;
-	font-family: 'Playfair Display', serif;
-	font-style:italic;
+	color:#f9f9f9;
+	font-family: "Martian Mono", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings:
+    	"wdth" 100;
 }
 
 .front-person-img{
 	width:500px;
 	height:500px;
 	overflow:hidden;
-	background:#F0F0F0;
+	background-image: url(../img/front-border.png);
+	background-size: cover;
 	position:relative;
 	z-index:15;
 	-webkit-transition:height .5s .3s ease, transform .5s .8s ease;
@@ -508,13 +534,13 @@ body.section-show .transition-mask:before{
 	z-index:5;
 	display:block;
 	width:100%;
-	font-family:Hind, sans-serif;
-	color:#CCC;
+	font-family:"UnifrakturMaguntia", serif;
+	color:#f9f9f9;
 	text-align:center;
-	font-size:24px;
-	letter-spacing:25px;
+	font-size:32px;
+	letter-spacing:9px;
 	line-height:1em;
-	text-transform:lowercase;
+	text-decoration: underline;
 }
 .front-person-titles > .t1{
 	left:5px;
@@ -541,7 +567,7 @@ body.section-show .transition-mask:before{
 }
 .front-person-titles > .t3{
 	left:0;
-	bottom:5px;
+	bottom:-15px;
 	-webkit-transform:translateY(100%) rotate(180deg);
 	-moz-transform:translateY(100%) rotate(180deg);
 	-ms-transform:translateY(100%) rotate(180deg);
@@ -584,23 +610,33 @@ body.section-show .transition-mask:before{
 	padding:0;
 	list-style:none;
 	margin-left:-15px;
+	
 }
 .front-person-links > ul > li > a{
-	font-weight:bold;
 	display:block;
 	font-size:14px;
-	padding:25px 0;
+	padding:15px 0;
+	margin-top: 15px;
 	cursor:pointer;
 	-webkit-transition:all .3s ease;
 	-moz-transition:all .3s ease;
 	transition:all .3s ease;
 	position:relative;
-	color:#999;
+	color:#f9f9f9;
 	text-align:left;
 	text-transform:uppercase;
 	letter-spacing:3px;
 	text-decoration:none;
 	line-height:1em;
+	font-family: "Martian Mono", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+	border: 2px solid #f9f9f9;
+	border-inline-start: #F5F5F5;
+	border-inline-end: #333;
 }
 .front-person-links > ul > li > a:before,
 .front-person-links > ul > li > a:after{
@@ -639,6 +675,7 @@ body.section-show .transition-mask:before{
 =======================================================================*/
 .about-section{
 	padding-top:0;
+	background-image: url(../img/bg.png);
 }
 .about-icons{
 	padding-top:110px;
@@ -656,6 +693,24 @@ body.section-show .transition-mask:before{
 .about-info > p{
 	line-height:1.8em;
 	margin-top:-.4em;
+	color: #f9f9f9;
+	font-size: 18px;
+	font-family: "Roboto Flex", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		"slnt" 0,
+		"wdth" 100,
+		"GRAD" 0,
+		"XOPQ" 96,
+		"XTRA" 468,
+		"YOPQ" 79,
+		"YTAS" 750,
+		"YTDE" -203,
+		"YTFI" 738,
+		"YTLC" 514,
+		"YTUC" 712;
 }
 .about-person-img{
 	text-align:center;
@@ -693,16 +748,22 @@ body.section-show .transition-mask:before{
 	margin:0;
 }
 .info-list > li > .inner > h4{
-	font-size:13px;
-	letter-spacing:4px;
+	font-size:16px;
+	letter-spacing:1px;
 	margin-right:16px;
 	margin-bottom:8px;
 	display:block;
-	color:#333;
+	color:#ffea00;
+	font-family: "Martian Mono", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 112.5;
 }
 .info-list > li > .inner > p{
-	font-size:16px;
-	color:#777;
+	font-size:18px;
+	color:#f9f9f9;
 	display:block;
 }
 .funfacts-block{
