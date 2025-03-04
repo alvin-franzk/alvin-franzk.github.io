@@ -176,3 +176,8 @@ $(function(){
 	
 	
 });
+
+document.querySelectorAll('.front-person-img > img:last-child').forEach(img => {
+    let randomDuration = (Math.random() * 4) + 3; // Random value between 3s and 7s
+    img.style.setProperty('--random-duration', `${randomDuration}s`);
+});
