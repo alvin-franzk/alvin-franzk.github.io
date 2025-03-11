@@ -15,6 +15,25 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.1.1] - 2025-03-11  
+### ✨ Added  
+- Filled in Education and Experience section of **Resume Page**
+- Added links to companies
+
+### 🔧 Changed  
+- Beautified **About Page**
+- Removed **Testimonials Page** in About Page
+- Buttons in **navigation menu** are smaller and have effects now
+- Name in **Footer** is now same as **navigation menu** buttons (Cyberpunk font)
+
+
+### 🐞 Fixed  
+- Fixed CSS for front-section titles (should look good now)
+- Fixed **navigation menu** button colors
+- Fixed footer links in **About Page** and **Resume Page**
+
+---
+
 ## [1.1.0] - 2025-03-04  
 ### ✨ Added  
 - Created **Testimonials Page** for client feedback  
