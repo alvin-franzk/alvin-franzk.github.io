@@ -15,6 +15,25 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.1.2] - 2025-03-13
+### ✨ Added  
+- Added more CSS glitch effects to the overlay in the **front-section** page, should look more glitchy now
+- Added glitch/wiggle animation to name header in the **front-section**
+- Added drop-shadow filter to about-img pic
+- Added content for experience, education, skills, and certificates in **Resume Page**
+- Added links to certificates when icon is clicked in certificates section
+- Added hobbies in **About Page** (check changes below)
+
+### 🔧 Changed  
+- Swapped about-me icons from **About Page** with hobbies-icons in **Resume Page**
+  - Now called collectively as traits
+- trait icons now have the corresponding icons
+- hobbies icons now have the corresponding icons
+
+### 🐞 Fixed  
+- Fixed **navigation menu** CSS buttons, should look bearable now
+
+---
 ## [1.1.1] - 2025-03-11  
 ### ✨ Added  
 - Filled in Education and Experience section of **Resume Page**
@@ -22,28 +41,28 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ### 🔧 Changed  
 - Beautified **About Page**
-- Removed **Testimonials Page** in About Page
+- Removed **Testimonials Page** from About Page
 - Buttons in **navigation menu** are smaller and have effects now
-- Name in **Footer** is now same as **navigation menu** buttons (Cyberpunk font)
+- Name font in **Footer** is now same as **navigation menu** buttons (Cyberpunk font)
+- Changed footer link icons in **About Page** and **Resume Page**
 
 
 ### 🐞 Fixed  
-- Fixed CSS for front-section titles (should look good now)
+- Fixed CSS for **front-section** titles (should look good now)
 - Fixed **navigation menu** button colors
-- Fixed footer links in **About Page** and **Resume Page**
+
 
 ---
 
 ## [1.1.0] - 2025-03-04  
 ### ✨ Added  
-- Created **Testimonials Page** for client feedback  
 - Implemented **lazy loading** for images to improve performance 
-- Added Glitch animations to various elements, notably the profile overlay mask
+- Added Glitch animations to various elements, notably the profile overlay mask in **front-section**
 
 ### 🔧 Changed  
 - Redesigned **navigation menu** for better mobile usability 
 - Redesigned preloader load.gif
-- Changed font for Header
+- Changed font for Header in **front-section**
 
 ### 🐞 Fixed  
 - Fixed alignment issue on the Resume Page

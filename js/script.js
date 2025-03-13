@@ -173,11 +173,35 @@ $(function(){
 			});
 		}
 	});
-	
-	
+
+	/*=========================================================================
+		Random Interval for Glitch effect
+	=========================================================================*/
+	document.querySelectorAll('.front-person-img > img:last-child').forEach(img => {
+		let randomDuration = (Math.random() * 4) + 3; // Random value between 3s and 7s
+		img.style.setProperty('--random-duration', `${randomDuration}s`);
+	});
 });
 
-document.querySelectorAll('.front-person-img > img:last-child').forEach(img => {
-    let randomDuration = (Math.random() * 4) + 3; // Random value between 3s and 7s
-    img.style.setProperty('--random-duration', `${randomDuration}s`);
+/*=========================================================================
+	Resume > Certificates Links redirect
+=========================================================================*/
+document.addEventListener("DOMContentLoaded", function () {
+	const links = {
+		cs50: "https://drive.google.com/file/d/1BSPt2oRogW-UJ_p1Vnly9p04QYWlIXe1/view?usp=sharing",
+		cssnc2: "https://drive.google.com/file/d/1o1GTrvMJEG42SBDW6z-ktRDXXdSA9p2W/view?usp=sharing",
+		cnaadobe: "https://drive.google.com/file/d/1LXU1vWG3RQ05vwkuhL6L9tTXVp2xBWzv/view?usp=sharing",
+		recode: "https://drive.google.com/file/d/1UrQiMdG3FJLRbvorryL9g61zXbAnQ7qP/view?usp=sharing",
+		csc: "https://drive.google.com/file/d/1Y6rZXLuk9PtWTQUwC5ne6sz6byH4VnDM/view?usp=sharing"
+	};
+
+	Object.keys(links).forEach(id => {
+		let element = document.getElementById(id);
+		if (element) {
+			element.addEventListener("click", function () {
+				window.open(links[id], "_blank");
+			});
+		}
+	});
 });
+	
