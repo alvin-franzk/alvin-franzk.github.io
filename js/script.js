@@ -188,11 +188,19 @@ $(function(){
 =========================================================================*/
 document.addEventListener("DOMContentLoaded", function () {
 	const links = {
+		// certificates
 		cs50: "https://drive.google.com/file/d/1BSPt2oRogW-UJ_p1Vnly9p04QYWlIXe1/view?usp=sharing",
 		cssnc2: "https://drive.google.com/file/d/1o1GTrvMJEG42SBDW6z-ktRDXXdSA9p2W/view?usp=sharing",
 		cnaadobe: "https://drive.google.com/file/d/1LXU1vWG3RQ05vwkuhL6L9tTXVp2xBWzv/view?usp=sharing",
 		recode: "https://drive.google.com/file/d/1UrQiMdG3FJLRbvorryL9g61zXbAnQ7qP/view?usp=sharing",
-		csc: "https://drive.google.com/file/d/1Y6rZXLuk9PtWTQUwC5ne6sz6byH4VnDM/view?usp=sharing"
+		csc: "https://drive.google.com/file/d/1Y6rZXLuk9PtWTQUwC5ne6sz6byH4VnDM/view?usp=sharing",
+		// socials
+		google: "mailto:alvinfranz815@gmail.com",
+		linkedin: "https://ph.linkedin.com/in/alvin-franz-jebone-863697222",
+		github: "https://github.com/alvin-franzk",
+		insta: "https://www.instagram.com/thedevilwearszara.666",
+		discord: "https://discord.com/users/350626707499253794",
+		facebook: "https://www.facebook.com/evilbiscuit666"
 	};
 
 	Object.keys(links).forEach(id => {

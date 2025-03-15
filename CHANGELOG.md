@@ -15,6 +15,16 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.1.3] - 2025-03-15  
+### ✨ Added  
+- Added section in **Resume Page** for PDF version download 
+- Added socials section in **Contact Page**, as well as basic contact info
+
+### 🐞 Fixed  
+- Fixed links for footer icons
+
+---
+
 ## [1.1.2] - 2025-03-13
 ### ✨ Added  
 - Added more CSS glitch effects to the overlay in the **front-section** page, should look more glitchy now
@@ -34,6 +44,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 - Fixed **navigation menu** CSS buttons, should look bearable now
 
 ---
+
 ## [1.1.1] - 2025-03-11  
 ### ✨ Added  
 - Filled in Education and Experience section of **Resume Page**
@@ -50,7 +61,6 @@ This project follows [Semantic Versioning](https://semver.org/).
 ### 🐞 Fixed  
 - Fixed CSS for **front-section** titles (should look good now)
 - Fixed **navigation menu** button colors
-
 
 ---
 
