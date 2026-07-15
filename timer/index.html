@@ -127,13 +127,16 @@ function updateCountdown() {
     const diff = targetDateTime - new Date();
 
     if (diff > 0) {
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const totalHours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
+        // Work hours
+        const workHoursLeft = workingDays * 8;
+        document.getElementById("liveTimer").textContent =
+            `${workHoursLeft.toLocaleString()} work hours remaining`;
 
         document.getElementById("liveTimer").textContent =
-            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            `${totalHours.toLocaleString()}h ${minutes}m ${seconds}s`;
     } else {
         document.getElementById("liveTimer").textContent =
             "🎉 Countdown Complete!";
