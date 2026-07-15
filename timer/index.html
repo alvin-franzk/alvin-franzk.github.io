@@ -17,7 +17,10 @@
 
     .card {
         text-align: center;
+        display: flex;
         background: white;
+        gap: 40px;
+        justify-content: space-around;
         padding: 2rem;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,.1);
@@ -33,9 +36,12 @@
 <body>
 
 <div class="card">
-    <h1>Days Left Until Resignation</h1>
+    <h4>Days Left Until Your Departure</h4>
     <div id="days">...</div>
-    <p>Until Dec 31, 2026</p>
+    <hr>
+    <h4>Days Since You Arrived in Hell</h4>
+    <div id="daysSince">...</div>
+
 </div>
 
 <script>
@@ -69,7 +75,6 @@ function countWorkingDays(startDate, endDate) {
         ) {
             count++;
         }
-        ``
 
         current.setDate(current.getDate() + 1);
     }
@@ -81,8 +86,8 @@ function updateCountdown() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    // Days left until Dec 31, 2026
     const target = new Date("2026-12-31");
-
     let workingDays = countWorkingDays(today, target);
 
     if (workingDays < 0) {
@@ -91,6 +96,17 @@ function updateCountdown() {
 
     document.getElementById("days").textContent =
         workingDays.toLocaleString();
+
+    // Days since Oct 17, 2025
+    const startDate = new Date("2025-10-17");
+    startDate.setHours(0, 0, 0, 0);
+
+    const daysSince = Math.floor(
+        (today - startDate) / (1000 * 60 * 60 * 24)
+    );
+
+    document.getElementById("daysSince").textContent =
+        daysSince.toLocaleString();
 }
 
 updateCountdown();
