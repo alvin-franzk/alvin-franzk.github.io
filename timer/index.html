@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working Days Countdown</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    .card {
+        text-align: center;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+
+    #days {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #0066cc;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>US Working Days Left</h1>
+    <div id="days">...</div>
+    <p>Until Dec 31, 2026</p>
+</div>
+
+<script>
+function countWorkingDays(startDate, endDate) {
+    let count = 0;
+    const current = new Date(startDate);
+
+    while (current <= endDate) {
+        const day = current.getDay();
+
+        // Monday-Friday
+        if (day >= 1 && day <= 5) {
+            count++;
+        }
+
+        current.setDate(current.getDate() + 1);
+    }
+
+    return count;
+}
+
+function updateCountdown() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const target = new Date("2026-12-31");
+
+    let workingDays = countWorkingDays(today, target);
+
+    if (workingDays < 0) {
+        workingDays = 0;
+    }
+
+    document.getElementById("days").textContent =
+        workingDays.toLocaleString();
+}
+
+updateCountdown();
+
+// Update every minute
+setInterval(updateCountdown, 60000);
+</script>
+
+</body>
+</html>
