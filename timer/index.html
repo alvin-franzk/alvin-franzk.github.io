@@ -36,16 +36,24 @@
         font-weight: bold;
         color: #0066cc;
     }
+    #liveTimer {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #d9534f;
+    }
 </style>
 </head>
 <body>
 
 <div class="card">
-    <h4>Days Left Until Your Departure</h4>
+    <h3>Days Left Until Your Departure</h3>
     <div id="days">...</div>
-    <hr>
-    <h4>Days Since You Arrived in Hell</h4>
+    <br>
+    <h3>Days Since You Arrived in Hell</h3>
     <div id="daysSince">...</div>
+    <br>
+    <h3>Time Remaining Until Dec 31, 2026</h3>
+    <div id="liveTimer">...</div>
 
 </div>
 
@@ -112,12 +120,31 @@ function updateCountdown() {
 
     document.getElementById("daysSince").textContent =
         daysSince.toLocaleString();
+
+    
+    // Live countdown timer
+    const targetDateTime = new Date("2026-12-31T23:59:59");
+
+    const diff = targetDateTime - new Date();
+
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("liveTimer").textContent =
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    } else {
+        document.getElementById("liveTimer").textContent =
+            "🎉 Countdown Complete!";
+    }
 }
 
 updateCountdown();
 
-// Update every minute
-setInterval(updateCountdown, 60000);
+// Update every second
+setInterval(updateCountdown, 1000);
 </script>
 
 </body>
