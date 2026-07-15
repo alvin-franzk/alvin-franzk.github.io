@@ -130,13 +130,9 @@ function updateCountdown() {
         const totalHours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
-        // Work hours
-        const workHoursLeft = workingDays * 8;
-        document.getElementById("liveTimer").textContent =
-            `${workHoursLeft.toLocaleString()} work hours remaining`;
 
-        // document.getElementById("liveTimer").textContent =
-            // `${totalHours.toLocaleString()}h ${minutes}m ${seconds}s`;
+        document.getElementById("liveTimer").textContent =
+            `${totalHours.toLocaleString()}h ${minutes}m ${seconds}s`;
     } else {
         document.getElementById("liveTimer").textContent =
             "🎉 Countdown Complete!";
