@@ -33,7 +33,7 @@
 <body>
 
 <div class="card">
-    <h1>US Working Days Left</h1>
+    <h1>Days Left Until Resignation</h1>
     <div id="days">...</div>
     <p>Until Dec 31, 2026</p>
 </div>
@@ -43,13 +43,33 @@ function countWorkingDays(startDate, endDate) {
     let count = 0;
     const current = new Date(startDate);
 
+    const holidays = [
+        "2026-01-01",
+        "2026-01-19",
+        "2026-02-16",
+        "2026-05-25",
+        "2026-06-19",
+        "2026-07-03",
+        "2026-09-07",
+        "2026-10-12",
+        "2026-11-11",
+        "2026-11-26",
+        "2026-12-25"
+    ];
+
     while (current <= endDate) {
         const day = current.getDay();
 
-        // Monday-Friday
-        if (day >= 1 && day <= 5) {
+        const dateString = current.toISOString().split("T")[0];
+
+        if (
+            day >= 1 &&
+            day <= 5 &&
+            !holidays.includes(dateString)
+        ) {
             count++;
         }
+        ``
 
         current.setDate(current.getDate() + 1);
     }
