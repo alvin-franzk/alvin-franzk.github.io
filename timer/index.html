@@ -52,7 +52,7 @@
     <div id="days">...</div>
     <h3>Days Since You Arrived in Hell</h3>
     <div id="daysSince">...</div>
-    <h3>Time Remaining Until Dec 31, 2026</h3>
+    <h3>Time Remaining</h3>
     <div id="liveTimer">...</div>
 </div>
 
@@ -135,8 +135,8 @@ function updateCountdown() {
         document.getElementById("liveTimer").textContent =
             `${workHoursLeft.toLocaleString()} work hours remaining`;
 
-        document.getElementById("liveTimer").textContent =
-            `${totalHours.toLocaleString()}h ${minutes}m ${seconds}s`;
+        // document.getElementById("liveTimer").textContent =
+            // `${totalHours.toLocaleString()}h ${minutes}m ${seconds}s`;
     } else {
         document.getElementById("liveTimer").textContent =
             "🎉 Countdown Complete!";
