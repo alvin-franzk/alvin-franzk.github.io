@@ -25,7 +25,7 @@ function updateWorkdayCountdown() {
 
     // After shift
     if (now >= endTime) {
-        timerElement.textContent = "🎉 You're free! See you tomorrow.";
+        timerElement.textContent = "🎉 You're free! FREE AT LAST!";
         progressBar.style.width = "100%";
         progressText.textContent = "100% Complete";
 
@@ -83,7 +83,7 @@ function updateWorkdayCountdown() {
 }
 
 function launchConfetti() {
-    const duration = 5000;
+    const duration = 10000;
     const end = Date.now() + duration;
 
     const interval = setInterval(() => {
