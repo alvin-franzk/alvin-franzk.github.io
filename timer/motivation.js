@@ -58,20 +58,90 @@ const motivationalMessages = [
     "🎯 One shift. One day. One step. That's how victories happen.",
     "🔄 You don't need motivation every day. You need consistency.",
     "🛡️ Heroes aren't fearless. They act despite fear.",
-    "🏖️ Freedom is approaching one workday at a time."
+    "🏖️ Freedom is approaching one workday at a time.",
+    "💙 Always be kind. You never know what battle someone is fighting.",
+    "🤝 Kindness costs nothing but can mean everything.",
+    "🌟 Be the reason someone believes there is still good in the world.",
+    "😊 A small act of kindness can change someone's entire day.",
+    "💛 Leave every person a little better than you found them.",
+    "🕊️ Kindness is a strength, not a weakness.",
+    "🌱 The kindness you give today may bloom tomorrow.",
+    "☀️ Be the sunshine in someone's cloudy day.",
+    "❤️ In a world where you can be anything, be kind.",
+    "🤗 Everyone is carrying something heavy. Be gentle.",
+    "🌈 Kind words can brighten even the darkest day.",
+    "🫶 Treat others with the compassion you hope to receive.",
+    "💐 Kindness is the language everyone understands.",
+    "✨ Your kindness may be remembered long after your words are forgotten.",
+    "🤍 Be kind even when no one is watching.",
+    "🌍 The world needs more kind hearts and fewer harsh words.",
+    "🫂 Sometimes the greatest thing you can offer is understanding.",
+    "🎁 Kindness is a gift that benefits both the giver and receiver.",
+    "💫 Never underestimate the impact of a simple act of kindness.",
+    "🌻 Choose kindness, especially when it's difficult.",
+    "🦸 A real hero lifts others up.",
+    "🕷️ Strength is important. Using it to help others is what matters.",
+    "🛡️ The strongest people are often the kindest.",
+    "💙 Being a good person is its own superpower.",
+    "🌟 The world already has enough critics. Be an encourager.",
+    "🤝 Help whenever you can. That's what heroes do.",
+    "⚡ A kind heart leaves a bigger legacy than a loud voice.",
+    "🏙️ You don't have to save the city today. Just help one person.",
+    "🕊️ Compassion is courage in action.",
+    "🌅 Make someone's day a little easier if you can.",
+    "☕ Be kind to the coworker who seems stressed.",
+    "🎧 Be patient. Someone's worst day may be hidden behind a smile.",
+    "📞 The person on the other side of the conversation is human too.",
+    "💼 Professionalism is important. Kindness makes it memorable.",
+    "🌱 Every interaction is a chance to leave positivity behind.",
+    "🤗 A little empathy goes a long way.",
+    "💙 People may forget what you did, but they'll remember how you made them feel.",
+    "🌟 Kindness is never wasted.",
+    "✨ Make kindness your default setting.",
+    "🫶 Be the person you needed when things were hard."
 ];
 
 function updateMotivation() {
+    const motivation = document.getElementById("motivation");
     const randomIndex = Math.floor(
         Math.random() * motivationalMessages.length
     );
 
-    document.getElementById("motivation").textContent =
+    
+// Remove animation class
+    motivation.classList.remove("fade-in");
+
+    // Force browser reflow
+    void motivation.offsetWidth;
+
+    // Update text
+    motivation.textContent =
         motivationalMessages[randomIndex];
+
+    // Re-add animation class
+    motivation.classList.add("fade-in");
+
+    //document.getElementById("motivation").innerHTML =
+        //`<strong>${motivationalMessages[randomIndex]}</strong>`;
+}
+
+
+function scheduleNextMotivation() {
+    const minDelay = 45000; // 45 sec
+    const maxDelay = 90000; // 90 sec
+
+    const randomDelay =
+        Math.floor(Math.random() * (maxDelay - minDelay + 1))
+        + minDelay;
+
+    setTimeout(() => {
+        updateMotivation();
+        scheduleNextMotivation();
+    }, randomDelay);
 }
 
 // Initial message
 updateMotivation();
 
-// New message every minute
-setInterval(updateMotivation, 60000);
+// Start random scheduling
+scheduleNextMotivation();
