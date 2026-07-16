@@ -123,7 +123,17 @@ const motivationalMessages = [
     "🌻 Nunca es tarde para empezar de nuevo.",
     "❤️ Haga el bien sin esperar nada a cambio.",
     "⏳ Todo pasa. Lo bueno llega.",
-    "🚪 Cada día lo acerca más a una nueva etapa."
+    "🚪 Cada día lo acerca más a una nueva etapa.",
+    "🔥 Un día menos en esta vaina.",
+    "☕ Sobrevivió otro turno. Vamos bien.",
+    "🏃 Ya falta menos para salir de aquí.",
+    "⏳ Relájese, que el tiempo igual va pasando.",
+    "🚀 Siga dándole, que ya casi.",
+    "🎉 Otro día completado. Misión cumplida.",
+    "💸 Cada turno es un paso más hacia sus metas.",
+    "🌴 La libertad está cada vez más cerca.",
+    "😌 Respire. Todo tiene fecha de vencimiento.",
+    "🧘‍♂️ Con calma. Ya va saliendo de esta."
 ];
 
 function updateMotivation() {

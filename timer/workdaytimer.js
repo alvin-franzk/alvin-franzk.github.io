@@ -66,6 +66,7 @@ function updateWorkdayCountdown() {
         progressBar.style.background = "#f59e0b"; // orange
     } else {
         progressBar.style.background = "#22c55e"; // green
+    // ADD IF STATEMENT THAT MAKES 67 MOTION IF ITS 67%
     }
     // animation shenanigans
     const currentPercentage = Number(percent.toFixed(1));
