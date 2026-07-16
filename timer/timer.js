@@ -1,0 +1,86 @@
+function countWorkingDays(startDate, endDate) {
+    let count = 0;
+    const current = new Date(startDate);
+
+    const holidays = [
+        "2026-01-01",
+        "2026-01-19",
+        "2026-02-16",
+        "2026-05-25",
+        "2026-06-19",
+        "2026-07-03",
+        "2026-09-07",
+        "2026-10-12",
+        "2026-11-11",
+        "2026-11-26",
+        "2026-12-25"
+    ];
+
+    while (current <= endDate) {
+        const day = current.getDay();
+
+        const dateString = current.toISOString().split("T")[0];
+
+        if (
+            day >= 1 &&
+            day <= 5 &&
+            !holidays.includes(dateString)
+        ) {
+            count++;
+        }
+
+        current.setDate(current.getDate() + 1);
+    }
+
+    return count;
+}
+
+function updateCountdown() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Days left until Dec 31, 2026
+    const target = new Date("2026-12-31");
+    let workingDays = countWorkingDays(today, target);
+
+    if (workingDays < 0) {
+        workingDays = 0;
+    }
+
+    document.getElementById("days").textContent =
+        workingDays.toLocaleString();
+
+    // Days since Oct 17, 2025
+    const startDate = new Date("2025-10-17");
+    startDate.setHours(0, 0, 0, 0);
+
+    const daysSince = Math.floor(
+        (today - startDate) / (1000 * 60 * 60 * 24)
+    );
+
+    document.getElementById("daysSince").textContent =
+        daysSince.toLocaleString();
+
+    
+    // Live countdown timer
+    const targetDateTime = new Date("2026-12-31T23:59:59");
+
+    const diff = targetDateTime - new Date();
+
+    if (diff > 0) {
+        const totalHours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("liveTimer").textContent =
+            `${totalHours}h ${minutes}m ${seconds}s`;
+    } else {
+        document.getElementById("liveTimer").textContent =
+            "🎉 Countdown Complete!";
+    }
+}
+
+updateCountdown();
+
+// Update every second
+setInterval(updateCountdown, 1000);
