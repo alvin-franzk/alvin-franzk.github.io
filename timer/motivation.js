@@ -127,8 +127,8 @@ function updateMotivation() {
 
 
 function scheduleNextMotivation() {
-    const minDelay = 45000; // 45 sec
-    const maxDelay = 90000; // 90 sec
+    const minDelay = 60000; // 60 sec
+    const maxDelay = 120000; // 120 sec
 
     const randomDelay =
         Math.floor(Math.random() * (maxDelay - minDelay + 1))
