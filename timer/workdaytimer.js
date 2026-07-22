@@ -47,12 +47,13 @@ function updateWorkdayCountdown() {
         return;
     }
 
-    // Reset for next workday
+
+    // Ensure rabbit image during shift
     const rabbit = document.getElementById("rabbit");
+
     if (rabbit.src.indexOf("rabbit.jpg") === -1) {
         rabbit.src = "rabbit.jpg";
     }
-    celebrationTriggered = false;
 
     const diff = endTime - now;
 
