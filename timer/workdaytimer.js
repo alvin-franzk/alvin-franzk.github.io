@@ -1,6 +1,7 @@
 
 let lastPercentage = -1;
 let celebrationTriggered = false;
+let sixtySevenTriggered = false;
 
 function updateWorkdayCountdown() {
     const now = new Date();
@@ -20,6 +21,10 @@ function updateWorkdayCountdown() {
         timerElement.textContent = "☕ Workday hasn't started yet.";
         progressBar.style.width = "0%";
         progressText.textContent = "0% Complete";
+
+        celebrationTriggered = false;
+        sixtySevenTriggered = false;
+
         return;
     }
 
@@ -42,6 +47,13 @@ function updateWorkdayCountdown() {
         return;
     }
 
+    // Reset for next workday
+    const rabbit = document.getElementById("rabbit");
+    if (rabbit.src.indexOf("rabbit.jpg") === -1) {
+        rabbit.src = "rabbit.jpg";
+    }
+    celebrationTriggered = false;
+
     const diff = endTime - now;
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -59,14 +71,13 @@ function updateWorkdayCountdown() {
     progressBar.style.width = `${percent}%`;
     progressText.textContent =
         `${percent.toFixed(1)}%`;
-    
+
     if (percent < 33.3) {
         progressBar.style.background = "#ef4444"; // red
     } else if (percent < 66.6) {
         progressBar.style.background = "#f59e0b"; // orange
     } else {
         progressBar.style.background = "#22c55e"; // green
-    // ADD IF STATEMENT THAT MAKES 67 MOTION IF ITS 67%
     }
     // animation shenanigans
     const currentPercentage = Number(percent.toFixed(1));
@@ -79,6 +90,16 @@ function updateWorkdayCountdown() {
         rabbit.classList.remove("hop");
         void rabbit.offsetWidth; // force reflow
         rabbit.classList.add("hop");
+    }
+
+    if (percent >= 67 && !sixtySevenTriggered) {
+        sixtySevenTriggered = true;
+
+        const rabbit = document.getElementById("rabbit");
+
+        rabbit.classList.remove("sixtySeven");
+        void rabbit.offsetWidth;
+        rabbit.classList.add("sixtySeven");
     }
 }
 
