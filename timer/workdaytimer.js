@@ -93,15 +93,50 @@ function updateWorkdayCountdown() {
         rabbit.classList.add("hop");
     }
 
-    if (percent >= 67 && !sixtySevenTriggered) {
+    if (Math.abs(currentPercentage - 67.0) < 0.05 && !sixtySevenTriggered) {
         sixtySevenTriggered = true;
 
         const rabbit = document.getElementById("rabbit");
+        const overlay = document.getElementById("sixtyseven");
 
-        rabbit.classList.remove("sixtySeven");
-        void rabbit.offsetWidth;
-        rabbit.classList.add("sixtySeven");
+        overlay.classList.remove("hidden");
+
+        [rabbit, overlay].forEach(el => {
+            el.classList.remove("sixtySeven");
+            void el.offsetWidth;
+            el.classList.add("sixtySeven");
+        });
+
+        setTimeout(() => {
+            overlay.classList.add("fade-out");
+        }, 4000);
+
+        setTimeout(() => {
+            overlay.classList.add("hidden");
+            overlay.classList.remove("fade-out");
+        }, 5500);
     }
+}
+
+//test
+function testSixtySeven() {
+    const overlay = document.getElementById("sixtyseven");
+
+    overlay.classList.remove("hidden");
+    overlay.classList.remove("sixtySeven");
+
+    void overlay.offsetWidth;
+
+    overlay.classList.add("sixtySeven");
+
+    setTimeout(() => {
+        overlay.classList.add("fade-out");
+    }, 4000);
+
+    setTimeout(() => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("fade-out");
+    }, 5500);
 }
 
 function launchConfetti() {
