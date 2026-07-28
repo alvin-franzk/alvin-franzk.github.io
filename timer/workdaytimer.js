@@ -109,6 +109,7 @@ function updateWorkdayCountdown() {
 
         setTimeout(() => {
             overlay.classList.add("fade-out");
+            rabbit.classList.remove("sixtySeven");
         }, 4000);
 
         setTimeout(() => {
